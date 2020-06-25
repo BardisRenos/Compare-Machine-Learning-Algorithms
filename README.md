@@ -12,14 +12,43 @@ In this repo it will discover how you can create a test harness to compare multi
 
 How do you choose the best model for your problem?. When you work on a machine learning project, you often end up with multiple good models to choose from. Each model will have different performance and characteristics.
 
+## Models
 
-<p align="center"> 
-<img src="https://github.com/BardisRenos/Compare-Machine-Learning-Algorithms/blob/master/myplot.png" width="450" height="350" style=centerme>
-</p>
+In order to compare ML algorithms. I choose a number of algorithms to compare in the same data set. I choose two version of support vector machine with different parameters. 
+
+* LogisticRegression
+* DecisionTreeClassifier
+* KNeighborsClassifier
+* LinearDiscriminantAnalysis
+* GaussianNB
+* SVM
+* RandomForestClassifier
+
+```python
+# prepare models
+models = [('LReg', LogisticRegression()), ('LDA', LinearDiscriminantAnalysis()),
+          ('KNN', KNeighborsClassifier(n_neighbors=5, metric='minkowski', p=2)),
+          ('DTClass', DecisionTreeClassifier(criterion='entropy', random_state=0)), ('GAU', GaussianNB()),
+          ('SVM1', SVC(kernel='rbf', random_state=0)), ('SVM2', SVC(kernel='linear', random_state=0)),
+          ('RFC', RandomForestClassifier(n_estimators=5, criterion='entropy', random_state=0))]
+```
 
 
 ### Scoring
 
+```python
+# evaluate each model in turn
+results = []
+names = []
+for name, classifier in models:
+    classifier.fit(X_train, y_train)
+    predicted_value = classifier.predict(X_test)
+    acc_score = accuracy_score(y_test, predicted_value)
+    results.append(acc_score)
+    names.append(name)
+    print("%s: %f" % (name, acc_score))
+
+```
 
 ```code
   LReg: 0.902098
@@ -31,3 +60,17 @@ How do you choose the best model for your problem?. When you work on a machine l
   SVM2: 0.902098
   RFC: 0.958042
 ```
+
+```python
+# Plotting the results
+  names = names
+  values = results
+  fig, axs = plt.subplots()
+  axs.bar(names, values)
+  fig.suptitle('Categorical Plotting')
+  plt.show()
+```
+
+<p align="center"> 
+<img src="https://github.com/BardisRenos/Compare-Machine-Learning-Algorithms/blob/master/myplot.png" width="450" height="350" style=centerme>
+</p>
