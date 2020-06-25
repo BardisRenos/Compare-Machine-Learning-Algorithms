@@ -36,6 +36,9 @@ models = [('LReg', LogisticRegression()), ('LDA', LinearDiscriminantAnalysis()),
 
 ### Scoring
 
+After setting the algorithms classifiers. I evaluate each algorithm and evaluate also by showing the accuracy's percentage.  
+
+
 ```python
 # evaluate each model in turn
 results = []
@@ -60,6 +63,8 @@ for name, classifier in models:
   SVM2: 0.902098
   RFC: 0.958042
 ```
+
+### Ploting
 
 ```python
 # Plotting the results
