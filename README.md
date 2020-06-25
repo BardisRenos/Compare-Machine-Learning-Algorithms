@@ -77,5 +77,5 @@ for name, classifier in models:
 ```
 
 <p align="center"> 
-<img src="https://github.com/BardisRenos/Compare-Machine-Learning-Algorithms/blob/master/myplot.png" width="450" height="350" style=centerme>
+<img src="https://github.com/BardisRenos/Compare-Machine-Learning-Algorithms/blob/master/MyPlot.png" width="450" height="350" style=centerme>
 </p>
