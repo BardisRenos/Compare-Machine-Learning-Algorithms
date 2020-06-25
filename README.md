@@ -54,14 +54,14 @@ for name, classifier in models:
 ```
 
 ```code
-  LReg: 0.902098
-  LDA: 0.958042
-  KNN: 0.916084
-  DTClass: 0.944056
-  GAU: 0.944056
-  SVM1: 0.902098
-  SVM2: 0.902098
-  RFC: 0.958042
+ LReg: 0.947368
+ LDA: 0.964912
+ KNN: 0.964912
+ DTClass: 0.964912
+ GAU: 0.894737
+ SVM1: 0.947368
+ SVM2: 0.947368
+ RFC: 0.947368        
 ```
 
 ### Ploting
